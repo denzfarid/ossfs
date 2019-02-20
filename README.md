@@ -34,6 +34,17 @@ YOUR_REGION_OSS : change to your region oss
 
 ```
 
+Before run dcoker compose up
+----------------------------
+```bash 
+$ echo "Bucketname:aliyunaccsesskey:aliyunsecretkey" > passwd-ossfs
+$ chmod 640 passwd-ossfs
+$ mkdir ossfs
+$ mount --bind ossfs ossfs
+$ mount --make-shared ossfs
+$ findmnt -o TARGET,PROPAGATION ossfs
+$ ln -s ossfs/uploads uploads
+```
 Run docker-compose
 ------------------
 ```bash
