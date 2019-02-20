@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  ossfs:
+    image: YOUR_BUILD_TAG-NAME
+    cap_add:
+      - MKNOD
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    devices:
+      - '/dev/fuse'
+    volumes:
+      - "./ossfs:/mnt:shared" #change ./ossfs directory to your destination directory
+      - "./passwd-ossfs:/etc/passwd-ossfs"
+    command: /usr/bin/ossfs YOUR-BUCKET-NAME /mnt -f -ourl=http://YOUR_REGION_OSS.aliyuncs.com
