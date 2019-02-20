@@ -2,7 +2,7 @@ version: '2'
 
 services:
   ossfs:
-    image: YOUR_BUILD_TAG-NAME
+    image: denzfarid/ossfs
     cap_add:
       - MKNOD
       - SYS_ADMIN
