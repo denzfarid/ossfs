@@ -1,8 +1,6 @@
-# ossfs Docker
-========
-Build Docker for ossfs
+# ossfs Docker and docker-compose ossfs
 
-Ossfs DockerFile
+Build Docker for ossfs and run with docker-compose
 
 Build Dockerfile
 ----------------
